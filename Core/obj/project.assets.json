@@ -963,16 +963,6 @@
             "rid": "win"
           }
         }
-      },
-      "Business/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "compile": {
-          "bin/placeholder/Business.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Business.dll": {}
-        }
       }
     }
   },
@@ -2641,16 +2631,10 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
-    },
-    "Business/1.0.0": {
-      "type": "project",
-      "path": "../Business/Business.csproj",
-      "msbuildProject": "../Business/Business.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Business >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.0-preview.5.23280.1"
     ]
   },
@@ -2686,11 +2670,7 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {
-            "C:\\Users\\incar\\Source\\Repos\\AdoNet\\Business\\Business.csproj": {
-              "projectPath": "C:\\Users\\incar\\Source\\Repos\\AdoNet\\Business\\Business.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

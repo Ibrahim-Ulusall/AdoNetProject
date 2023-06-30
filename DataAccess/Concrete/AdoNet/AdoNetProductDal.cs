@@ -16,14 +16,19 @@ namespace DataAccess.Concrete.AdoNet
 		private SqlConnection Connection()
 		{
 			SqlConnection connection = new SqlConnection(
-				@"Server = (localdb)\mssqllocaldb;Database=ECommerce;Trusted_Connection=true;");
+				@"Server = (localdb)\mssqllocaldb;Database=ECommarce;Trusted_Connection=true;");
 			if (connection.State == System.Data.ConnectionState.Closed)
 				connection.Open();
 			return connection;
 		}
 		public void Add(Product entity)
 		{
-			throw new NotImplementedException();
+			SqlCommand command = new SqlCommand("insert into Products values(@name,@stock,@price)", Connection());
+			command.Parameters.AddWithValue("@name", entity.ProductName);
+			command.Parameters.AddWithValue("@stock", entity.UnitInStock);
+			command.Parameters.AddWithValue("@price", entity.UnitInPrice);
+			command.ExecuteNonQuery();
+			Connection().Close();
 		}
 
 		public void Delete(Product entity)
@@ -47,11 +52,13 @@ namespace DataAccess.Concrete.AdoNet
 				{
 					Id = (int)reader["Id"],
 					ProductName = reader["ProductName"].ToString(),
-					UnitInStock = Convert.ToInt32(reader["UnitInPrice"]),
-					UnitInPrice = Convert.ToDecimal(reader["UnitInStock"])
+					UnitInStock = Convert.ToInt32(reader["UnitInStock"]),
+					UnitInPrice = Convert.ToDecimal(reader["UnitInPrice"])
 				};
 				products.Add(product);
 			}
+			reader.Close();
+			Connection().Close();
 			return products;
 		}
 
