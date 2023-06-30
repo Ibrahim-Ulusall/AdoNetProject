@@ -1,4 +1,6 @@
-﻿using Entities.Concrete;
+﻿using Business.Validation;
+using Core.CrossCuttingConcerns.Validation;
+using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +22,7 @@ namespace UI
 
 		private void AddButton_Click(object sender, EventArgs e)
 		{
+			
 			var result = Form1.serviceManager.Add(new Product
 			{
 				ProductName = productNameBox.Text,

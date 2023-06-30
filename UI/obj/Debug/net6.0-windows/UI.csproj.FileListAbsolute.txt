@@ -62,3 +62,5 @@ C:\Users\incar\Source\Repos\AdoNet\UI\obj\Debug\net6.0-windows\UI.pdb
 C:\Users\incar\Source\Repos\AdoNet\UI\obj\Debug\net6.0-windows\UI.genruntimeconfig.cache
 C:\Users\incar\Source\Repos\AdoNet\UI\obj\Debug\net6.0-windows\ref\UI.dll
 C:\Users\incar\Source\Repos\AdoNet\UI\obj\Debug\net6.0-windows\UI.AddForm.resources
+C:\Users\incar\Source\Repos\AdoNet\UI\bin\Debug\net6.0-windows\FluentValidation.dll
+C:\Users\incar\Source\Repos\AdoNet\UI\obj\Debug\net6.0-windows\UI.UpdateForm.resources

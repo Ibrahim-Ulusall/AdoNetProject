@@ -33,7 +33,7 @@
 			panel2 = new Panel();
 			button3 = new Button();
 			button2 = new Button();
-			button1 = new Button();
+			DeleteButton = new Button();
 			btnAdd = new Button();
 			((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
 			panel2.SuspendLayout();
@@ -50,6 +50,7 @@
 			dataGridView1.RowTemplate.Height = 25;
 			dataGridView1.Size = new Size(892, 541);
 			dataGridView1.TabIndex = 0;
+			dataGridView1.CellClick += dataGridView1_CellClick;
 			// 
 			// panel1
 			// 
@@ -63,7 +64,7 @@
 			// 
 			panel2.Controls.Add(button3);
 			panel2.Controls.Add(button2);
-			panel2.Controls.Add(button1);
+			panel2.Controls.Add(DeleteButton);
 			panel2.Controls.Add(btnAdd);
 			panel2.Dock = DockStyle.Left;
 			panel2.Location = new Point(0, 39);
@@ -89,15 +90,17 @@
 			button2.TabIndex = 2;
 			button2.Text = "Upd";
 			button2.UseVisualStyleBackColor = true;
+			button2.Click += button2_Click;
 			// 
-			// button1
+			// DeleteButton
 			// 
-			button1.Location = new Point(12, 109);
-			button1.Name = "button1";
-			button1.Size = new Size(49, 23);
-			button1.TabIndex = 1;
-			button1.Text = "Del";
-			button1.UseVisualStyleBackColor = true;
+			DeleteButton.Location = new Point(12, 109);
+			DeleteButton.Name = "DeleteButton";
+			DeleteButton.Size = new Size(49, 23);
+			DeleteButton.TabIndex = 1;
+			DeleteButton.Text = "Del";
+			DeleteButton.UseVisualStyleBackColor = true;
+			DeleteButton.Click += DeleteButton_Click;
 			// 
 			// btnAdd
 			// 
@@ -134,7 +137,7 @@
 		private Panel panel2;
 		private Button button3;
 		private Button button2;
-		private Button button1;
+		private Button DeleteButton;
 		private Button btnAdd;
 	}
 }

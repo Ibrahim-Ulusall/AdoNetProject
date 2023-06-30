@@ -33,7 +33,10 @@ namespace DataAccess.Concrete.AdoNet
 
 		public void Delete(Product entity)
 		{
-			throw new NotImplementedException();
+			SqlCommand command = new SqlCommand("Delete from Products where Id = @id",Connection());
+			command.Parameters.AddWithValue("@id", entity.Id);
+			command.ExecuteNonQuery();
+			Connection().Close();
 		}
 
 		public Product Get(Expression<Func<Product, bool>> filter)
@@ -64,7 +67,18 @@ namespace DataAccess.Concrete.AdoNet
 
 		public void Update(Product entity)
 		{
-			throw new NotImplementedException();
+			SqlCommand command = new SqlCommand(
+				"Update Products set " +
+				"ProductName = @name," +
+				"UnitInStock = @stock," +
+				"UnitInPrice = @price " +
+				"where Id = @id ", Connection());
+			command.Parameters.AddWithValue("@name", entity.ProductName);
+			command.Parameters.AddWithValue("@stock", entity.UnitInStock);
+			command.Parameters.AddWithValue("@price", entity.UnitInPrice);
+			command.Parameters.AddWithValue("@id", entity.Id);
+			command.ExecuteNonQuery();
+			Connection().Close();
 		}
 	}
 }

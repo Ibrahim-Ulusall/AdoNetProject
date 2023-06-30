@@ -12,5 +12,7 @@ namespace Business.Abstract
 	{
 		IDataResult<List<Product>> GetAll();
 		IResult Add(Product product);
+		IResult Delete(Product product);
+		IResult Update(Product product);
 	}
 }
